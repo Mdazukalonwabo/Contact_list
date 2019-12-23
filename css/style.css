@@ -1,0 +1,94 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    background-image: linear-gradient(to right, #4A90E2 , #80C3F3);
+    height: 90px
+}
+
+header img{
+    width: 213px;
+}
+
+#addNewContact img{
+    border: 1px solid;
+}
+
+h3{
+    color: #9B9B9B
+}
+
+h4{
+    color: #4A90E2
+}
+
+.btn{
+    border: 1px solid;
+    width: 152px;
+}
+
+.btn:hover{
+    background-color: #4A90E2;
+    color: #fff
+}
+
+.contactHeading{
+    background-color: rgba(155, 155, 155, 0.2);
+    height: 20px;
+}
+
+
+.contact img{
+    width: 73px;
+    height: 73px;
+}
+
+.contact:not(:last-child) { 
+    border-bottom: 1px solid #9B9B9B
+}
+
+.contact{
+    padding: 1.7% 0;
+}
+
+.contact button{
+    border: none;
+    background-color: white;
+}
+
+.btn-outline-primary{
+    border-color: #4A90E2;
+    color: #4A90E2
+}
+
+.far{
+    color: #4A90E2
+}
+
+.contactInfo{
+    display: none;
+    color: #9B9B9B
+}
+
+#addNewContactModel img{
+    width: 106px;
+    height: 104px;
+    border: 1px solid #9B9B9B
+}
+
+@media screen and (min-width: 1280px){
+    .contact img{
+        width: 103px;
+        height: 103px;
+    }
+
+    #addNewContactModel img{
+        width: 120px;
+        height: 120px;
+    }
+
+    .contactHeading{
+        height: 30px;
+    }
+}
