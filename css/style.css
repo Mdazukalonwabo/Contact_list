@@ -1,10 +1,16 @@
 body{
     font-family: 'Roboto', sans-serif;
+    color: #4A4A4A
 }
 
 header{
+    height: 65px;
+    background-image: -webkit-linear-gradient(to right, #4A90E2 , #80C3F3); 
+    background-image: -moz-linear-gradient(to right, #4A90E2 , #80C3F3); 
+    background-image: -ms-linear-gradient(to right, #4A90E2 , #80C3F3); 
+    background-image: -o-linear-gradient(to right, #4A90E2 , #80C3F3);
     background-image: linear-gradient(to right, #4A90E2 , #80C3F3);
-    height: 90px
+    box-shadow: 2px 2px #9B9B9B;
 }
 
 header img{
@@ -23,38 +29,11 @@ h4{
     color: #4A90E2
 }
 
+
 .btn{
     border: 1px solid;
-    width: 152px;
-}
-
-.btn:hover{
-    background-color: #4A90E2;
-    color: #fff
-}
-
-.contactHeading{
-    background-color: rgba(155, 155, 155, 0.2);
-    height: 20px;
-}
-
-
-.contact img{
-    width: 73px;
-    height: 73px;
-}
-
-.contact:not(:last-child) { 
-    border-bottom: 1px solid #9B9B9B
-}
-
-.contact{
-    padding: 1.7% 0;
-}
-
-.contact button{
-    border: none;
-    background-color: white;
+    width: 136px;
+    
 }
 
 .btn-outline-primary{
@@ -62,13 +41,78 @@ h4{
     color: #4A90E2
 }
 
+.btn-outline-secondary{
+    color: #9B9B9B;
+    border-color: #4A4A4A 
+}
+
+.btn-outline-primary:hover{
+    background-color: #4A90E2;
+    color: #fff;
+}
+
+.btn-outline-secondary:hover{
+    background-color: #4A4A4A;
+    color: #fff;
+}
+
+
+.contactHeading{
+    background-color: rgba(155, 155, 155, 0.2);
+    height: 20px;
+}
+
+.contactImage{
+    width: 73px;
+    height: 73px;
+    border: 1px solid #9B9B9B;
+}
+
+#benNevis{
+    background-image: url("../images/user5.jpg")
+}
+
+#brainClayton{
+    background-image: url("../images/user2.jpg")
+}
+
+#britenyKlerk{
+    background-image: url("../images/user3.jpg")
+}
+
+#casandraHarris{
+    background-image: url("../images/user1.jpg")
+}
+
+#caitlynBowens{
+    background-image: url("../images/user4.jpg")
+}
+
+.contactImage{
+    background-position: center;
+    background-size: cover
+}
+
+.contact:not(:last-child) { 
+    border-bottom: 1px solid rgba(155, 155, 155, 0.2);
+}
+
+.contact{
+    padding: 5% 0;
+}
+
+.contact button{
+    border: none;
+    background-color: white;
+}
+
 .far{
     color: #4A90E2
 }
 
 .contactInfo{
-    display: none;
-    color: #9B9B9B
+    color: #9B9B9B;
+    display: inherit;
 }
 
 #addNewContactModel img{
@@ -77,8 +121,33 @@ h4{
     border: 1px solid #9B9B9B
 }
 
+.modal{
+    color: #9B9B9B;
+}
+
+#deleteContactModel .modal-dialog{
+    top: 35%;
+}
+
+#addNewContactModel .modal-dialog{
+    top: 12%;
+}
+
+#addNewContactModel::placeholder, #addNewContactModel:-ms-input-placeholder, #addNewContactModel::-ms-input-placeholder {
+    color: #9B9B9B;
+    opacity: 0.1;
+}
+
+.fas{
+    color: #9B9B9B;
+}
+
 @media screen and (min-width: 1280px){
-    .contact img{
+    header{
+        height: 90px;
+    }
+    
+    .contactImage{
         width: 103px;
         height: 103px;
     }
@@ -90,5 +159,9 @@ h4{
 
     .contactHeading{
         height: 30px;
+    }
+
+    .contact{
+        padding: 2% 0;
     }
 }
