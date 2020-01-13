@@ -1,13 +1,25 @@
 var contactContainer = document.querySelector('.contacts');
 
-$(document).ready(function () {
-    $('#number').change(function () {
-        $('.number').toggle();
-    });
+$(document).ready(function() {
+    var transitionSpeed = 300;
+    
+    $('input[type="checkbox"]').each(function() {
+		var thisBox = $(this).attr("id");
+		if ($(this).is(":checked")) {
+			$("." + thisBox).show(transitionSpeed);
+		} else {
+			$("." + thisBox).hide(transitionSpeed);
+		}
+	});
 
-    $('#email').change(function () {
-        $('.email').toggle();
-    });
+	$('input[type="checkbox"]').change( function() {
+		var thisBox = $(this).attr("id");
+		if ($("#" + thisBox).is(":checked")) {
+			$("." + thisBox).show(transitionSpeed);
+		} else {
+			$("." + thisBox).hide(transitionSpeed);
+		}
+	});
 });
 
 
@@ -26,7 +38,7 @@ function createNewContact() {
     var surname = document.getElementById('newSurname').value;
     var mobileNumber = document.getElementById('newMobileNumber').value;
     var email = document.getElementById('newEmailAddress').value;
-    var image = document.getElementById('newImage');
+    var image = document.getElementById('placeholder');
     var content = "<div class='row align-items-center contact'>"
         + "<div class='col-auto'>"
         + "<div id='" + name[0].toLowerCase() + name.slice(1) + surname[0].toUpperCase() + surname.slice(1) + "' class='img-fluid rounded-circle contactImage'"
@@ -56,6 +68,7 @@ function createNewContact() {
 
 var reader = new FileReader();
 reader.onload = function (e) {
+    console.log($('#placeholder').attr('src', e.target.result))
     $('#placeholder').attr('src', e.target.result);
 }
 
@@ -73,15 +86,22 @@ function getContact() {
     var buttons = contactContainer.getElementsByTagName('button')
     for (var i = 0; i < buttons.length; i++) {
         var button = buttons[i];
-        button.addEventListener('click', deleteContact);
+        button.addEventListener('click', function(event){
+            var buttonClicked = find(event);
+            return buttonClicked    
+        
+        });        
     }
+    
 }
 
-getContact();
+getContact()
 
+function find(item){
+    return item.toElement.parentElement.parentElement.parentElement
+}
 
-function deleteContact(event) {
-    var buttonClicked = event.target;
-    console.log(buttonClicked)
-    // return buttonClicked.parentElement.parentElement.parentElement
+function deleteContact(){
+    var contact = getContact()
+    console.log(contact)
 }
